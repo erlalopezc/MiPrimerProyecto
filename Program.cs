@@ -15,6 +15,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IRepository<Categorium>, CategoriaRepository>();
 builder.Services.AddScoped<CategoriaServices>();
+builder.Services.AddScoped<BdElopezContext>();
 
 var app = builder.Build();
 
