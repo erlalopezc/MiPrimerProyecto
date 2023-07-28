@@ -35,6 +35,8 @@ namespace Infraestructure.data
                 vCategoria.NombreCat = entity.NombreCat;
                 _db.Entry(vCategoria).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             }
+            entity.NombreCat = entity.NombreCat;
+            _db.Categoria.Update(entity);
             return entity;
         }
 
