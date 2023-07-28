@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace Aplication.Interface
 {
-    public interface IService<TEntity>:IAdd<TEntity>
+    public interface IService<TEntity>:IAdd<TEntity>, IUpdate<TEntity>
     {
-    }
+    } 
 }
+

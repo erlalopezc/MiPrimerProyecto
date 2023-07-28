@@ -26,7 +26,22 @@ namespace Infraestructure.data
             _db.Categoria.Add(entity);
             return entity;
         }
-        public void Save() { _db.SaveChanges(); }  
+
+        public Categorium Update(Categorium entity)
+        {
+            // entity.CodigoCat = entity.CodigoCat;
+            var vCategoria = _db.Categoria.Where(x => x.CodigoCat == entity.CodigoCat).FirstOrDefault();
+            if (vCategoria != null) {
+                vCategoria.NombreCat = entity.NombreCat;
+                _db.Entry(vCategoria).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            }
+            return entity;
+        }
+
+        public void Save() 
+        { 
+            _db.SaveChanges(); 
+        }  
             
     }
 }

@@ -20,7 +20,12 @@ namespace MiPrimerProyecto.Controllers
             _service.Add(pCategoria);
             return Ok(pCategoria);
         }
-    
+        [HttpPut]
+        public ActionResult Put([FromBody] Categorium pCategoria)
+        {
+            _service.Update(pCategoria);
+            return Ok(pCategoria);
+        }
 
 
     }

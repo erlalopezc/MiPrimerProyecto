@@ -23,5 +23,12 @@ namespace Aplication.Services
             _repository.Save();
             return vresult;
         }
+
+        public Categorium Update(Categorium entity)
+        {
+            var vresult = _repository.Update(entity);
+            _repository.Save(); 
+            return vresult;
+        }
     }
 }
